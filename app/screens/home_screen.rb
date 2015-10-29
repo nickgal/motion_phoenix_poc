@@ -1,33 +1,61 @@
-class HomeScreen < PM::Screen
-  title "Your title here"
+class HomeScreen < PM::TableScreen
+  title "Switches"
+  refreshable
   stylesheet HomeScreenStylesheet
+  row_height :auto, estimated: 44
 
   def on_load
-    set_nav_bar_button :left, system_item: :camera, action: :nav_left_button
-    set_nav_bar_button :right, title: "Right", action: :nav_right_button
-
-    @hello_world = append!(UILabel, :hello_world)
+    @switches = []
+    load_async
+    phoenix_connect
   end
 
-  def nav_left_button
-    mp 'Left button'
+  def table_data
+    [{
+      cells: @switches.map do |switch|
+        {
+          title: switch[:name],
+          accessory: {
+            view: :switch,
+            value: switch[:state],
+            action: :toggle_switch,
+            arguments: { switch: switch },
+          }
+        }
+      end
+    }]
   end
 
-  def nav_right_button
-    mp 'Right button'
+  def toggle_switch(args={})
+    Switch.toggle args[:switch]["id"], args[:value] do
+    end
   end
 
-  # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it
-  # is tag the views you need to restyle in your stylesheet, then only reapply the tagged views, like so:
-  #   def logo(st)
-  #     st.frame = {t: 10, w: 200, h: 96}
-  #     st.centered = :horizontal
-  #     st.image = image.resource('logo')
-  #     st.tag(:reapply_style)
-  #   end
-  #
-  # Then in will_animate_rotate
-  #   find(:reapply_style).reapply_styles#
+  def on_refresh
+    load_async
+  end
+
+  def load_async
+    Switch.async_load do |switches|
+      @switches = switches
+      stop_refreshing
+      update_table_data
+    end
+  end
+
+  def phoenix_connect
+    url = "http://192.168.101.106:4000/socket/websocket".to_url
+    @socket = PhxSocket.alloc.initWithURL url, heartbeatInterval: 20
+    @socket.connect
+
+    @channel = PhxChannel.alloc.initWithSocket @socket, topic: "switches:lobby", params: {}
+    @channel.onEvent("update", callback: lambda do |payload, _ref|
+      index = @switches.find_index{|switch| switch["id"] == payload["id"]}
+      @switches[index] = payload
+      update_table_data
+    end)
+    @channel.join
+  end
 
   # Remove the following if you're only using portrait
   def will_animate_rotate(orientation, duration)

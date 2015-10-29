@@ -7,6 +7,9 @@ gem "cdq" # Core Data
 gem "motion-yaml", "1.4" # Version 1.5 breaks CDQ
 gem "afmotion" # Networking
 
+gem "motion-support", require: false
+gem "sugarcube", require: false
+
 # Debugging tools
 gem "newclear" # Completely wipe out the simulator and rebuild
 

@@ -60,6 +60,8 @@ GEM
     motion-cocoapods (1.7.4)
       cocoapods (>= 0.34)
     motion-require (0.2.0)
+    motion-support (0.2.6)
+      motion-require (>= 0.0.6)
     motion-yaml (1.4)
     motion_print (1.2.0)
     nap (1.0.0)
@@ -81,6 +83,7 @@ GEM
       builder (~> 3.2)
       plist (~> 3.1)
     ruby_motion_query (1.6.1)
+    sugarcube (3.3.7)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -96,10 +99,12 @@ DEPENDENCIES
   afmotion
   cdq
   motion-cocoapods
+  motion-support
   motion-yaml (= 1.4)
   newclear
   rake
   redpotion
+  sugarcube
 
 BUNDLED WITH
    1.10.6

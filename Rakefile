@@ -5,13 +5,15 @@ require 'motion/project/template/ios'
 require 'bundler'
 Bundler.require
 
+require 'sugarcube-repl'
+require 'motion-support/core_ext/hash'
 # require 'bubble-wrap'
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings
 
   app.name = 'motion_phoenix'
-  app.identifier = 'com.your_domain_here.motion_phoenix'
+  app.identifier = 'com.nickgal.motion_phoenix'
 
   app.short_version = '0.1.0'
   # Get version from git
@@ -45,12 +47,14 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'SDWebImage'
+    pod 'PhoenixClient'
   #   pod 'JGProgressHUD'
   #   pod 'SVProgressHUD'
   #   pod "FontasticIcons"
   end
 
   app.development do
+    app.info_plist['NSAppTransportSecurity'] = { 'NSAllowsArbitraryLoads' => true }
     app.codesign_certificate = "iPhone Developer: YOURNAME"
     app.provisioning_profile = "signing/motion_phoenix.mobileprovision"
   end
