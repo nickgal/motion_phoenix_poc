@@ -44,7 +44,7 @@ class HomeScreen < PM::TableScreen
   end
 
   def phoenix_connect
-    url = "http://192.168.101.106:4000/socket/websocket".to_url
+    url = "#{'SERVER_URL'.info_plist}/socket/websocket".to_url
     @socket = PhxSocket.alloc.initWithURL url, heartbeatInterval: 20
     @socket.connect
 

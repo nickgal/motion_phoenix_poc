@@ -5,7 +5,8 @@ require 'motion/project/template/ios'
 require 'bundler'
 Bundler.require
 
-require 'sugarcube-repl'
+# require 'sugarcube-repl'
+require 'sugarcube-files'
 require 'motion-support/core_ext/hash'
 # require 'bubble-wrap'
 
@@ -54,9 +55,11 @@ Motion::Project::App.setup do |app|
   end
 
   app.development do
-    app.info_plist['NSAppTransportSecurity'] = { 'NSAllowsArbitraryLoads' => true }
     app.codesign_certificate = "iPhone Developer: YOURNAME"
     app.provisioning_profile = "signing/motion_phoenix.mobileprovision"
+
+    app.info_plist['NSAppTransportSecurity'] = { 'NSAllowsArbitraryLoads' => true }
+    app.info_plist['SERVER_URL'] = "http://192.168.101.106:4000"
   end
 
   app.release do
