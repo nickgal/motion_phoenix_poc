@@ -8,6 +8,10 @@ class HomeScreen < PM::TableScreen
     @switches = []
     load_async
     phoenix_connect
+
+    view.tap do |table|
+      rmq(table).apply_style :table
+    end
   end
 
   def table_data
