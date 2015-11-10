@@ -9,7 +9,7 @@ class StandardAppearance
       end
 
       UILabel.appearance.tap do |o|
-        o.setTextColor rmq.color.black
+        o.setTextColor rmq.color.white
         o.font = rmq.font.medium
       end
 
@@ -17,9 +17,9 @@ class StandardAppearance
       #   o.setTintColor rmq.color.blue
       # end
 
-      # UITableView.appearance.tap do |o|
-      #   o.separatorColor = rmq.color.clear
-      # end
+      UITableView.appearance.tap do |o|
+        o.separatorColor = rmq.color.from_hex('222222')
+      end
 
       # UINavigationBar.appearance.tap do |o|
       #   o.barTintColor = rmq.color.black
@@ -48,4 +48,3 @@ class StandardAppearance
     end
   end
 end
-

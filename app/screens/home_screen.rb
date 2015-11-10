@@ -9,9 +9,9 @@ class HomeScreen < PM::TableScreen
     load_async
     phoenix_connect
 
-    view.tap do |table|
-      rmq(table).apply_style :table
-    end
+    # view.tap do |table|
+    #   rmq(table).apply_style :table
+    # end
   end
 
   def table_data
@@ -19,6 +19,13 @@ class HomeScreen < PM::TableScreen
       cells: @switches.map do |switch|
         {
           title: switch[:name],
+          properties: {
+            background_color: color.from_hex('444444'),
+            text_label: {
+              color: color.white
+            }
+            # 'textLabel.color' => color.random
+          },
           accessory: {
             view: :switch,
             value: switch[:state],
