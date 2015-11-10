@@ -25,16 +25,16 @@ class StandardAppearance
         o.onTintColor = rmq.color.from_hex('#11c1f3')
       end
 
-      # UINavigationBar.appearance.tap do |o|
-      #   o.barTintColor = rmq.color.black
-      #    o.setTintColor rmq.color.white
+      UINavigationBar.appearance.tap do |o|
+        o.barTintColor = rmq.color.black
+        o.setTintColor rmq.color.white
 
-      #    o.setTitleTextAttributes( {
-      #      UITextAttributeFont => rmq.font.medium,
-      #      UITextAttributeTextColor => rmq.color.white
-      #      #UITextAttributeTextShadowColor => color.clear
-      #    })
-      #  end
+        o.setTitleTextAttributes(
+          # UITextAttributeFont => rmq.font.medium,
+          UITextAttributeTextColor => rmq.color.white
+          # UITextAttributeTextShadowColor => color.clear
+        )
+      end
 
       #  UIBarButtonItem.appearance.tap do |o|
       #    o.setTitleTextAttributes( {
