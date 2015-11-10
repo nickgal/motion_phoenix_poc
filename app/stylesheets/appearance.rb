@@ -18,7 +18,8 @@ class StandardAppearance
       # end
 
       UITableView.appearance.tap do |o|
-        o.separatorColor = rmq.color.from_hex('222222')
+        o.separatorColor = rmq.color.from_hex('#222222')
+      end
       end
 
       # UINavigationBar.appearance.tap do |o|

@@ -20,7 +20,7 @@ class HomeScreen < PM::TableScreen
         {
           title: switch[:name],
           properties: {
-            background_color: color.from_hex('444444'),
+            background_color: color.from_hex('#444444'),
             text_label: {
               color: color.white
             }

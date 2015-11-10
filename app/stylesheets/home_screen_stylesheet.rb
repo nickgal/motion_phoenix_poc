@@ -6,7 +6,7 @@ class HomeScreenStylesheet < ApplicationStylesheet
   end
 
   def root_view(st)
-    st.background_color = color.from_hex('222222')
+    st.background_color = color.from_hex('#222222')
   end
 
   # def table(st)
