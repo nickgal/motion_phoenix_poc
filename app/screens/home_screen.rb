@@ -24,7 +24,6 @@ class HomeScreen < PM::TableScreen
             text_label: {
               color: color.white
             }
-            # 'textLabel.color' => color.random
           },
           accessory: {
             view: :switch,
