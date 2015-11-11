@@ -54,6 +54,8 @@ Motion::Project::App.setup do |app|
   #   pod "FontasticIcons"
   end
 
+  app.target "homemade_pi_watch", :watchapp
+
   app.info_plist['UIViewControllerBasedStatusBarAppearance'] = false
   app.info_plist["UIStatusBarStyle"] = "UIStatusBarStyleLightContent"
 
