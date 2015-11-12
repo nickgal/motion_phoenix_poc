@@ -19,9 +19,6 @@
 @end
 
 @interface InterfaceController: WKInterfaceController
-
-@property IBOutlet WKInterfaceLabel * hello_world;
-
 -(IBAction) awakeWithContext:(id) context;
 -(IBAction) willActivate;
 -(IBAction) didDeactivate;

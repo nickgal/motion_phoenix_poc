@@ -10,11 +10,18 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label alignment="left" text="Label" id="MoR-gN-iI9"/>
+                        <table alignment="left" id="ecO-DO-2GH">
+                            <items>
+                                <tableRow id="4fv-Xq-iiQ">
+                                    <group key="rootItem" width="1" alignment="left" id="lEa-2v-YX2">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Switch 1" id="7hH-tl-lKu"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
-                    <connections>
-                        <outlet property="hello_world" destination="MoR-gN-iI9" id="H3f-Gq-jEi"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

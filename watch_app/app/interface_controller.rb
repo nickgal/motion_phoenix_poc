@@ -1,13 +1,15 @@
 class InterfaceController < WKInterfaceController
   extend IB
 
-  outlet :hello_world, WKInterfaceLabel
+  # outlet :hello_world, WKInterfaceLabel
+  # outlet_collection :labels, UILabel # @property IBOutletCollection(UILabel) NSArray * labels;
+
 
   def awakeWithContext(context)
     super
 
     # Initialize variables here.
-    @hello_world.text = "hellow"
+    # @hello_world.text = "hellow"
     # Configure interface objects here.
     NSLog("%@ awakeWithContext", self)
 
