@@ -15,3 +15,6 @@
 @implementation NotificationController
 @end
 
+@implementation SwitchRow
+@end
+

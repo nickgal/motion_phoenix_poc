@@ -12,7 +12,7 @@
                     <items>
                         <table alignment="left" id="ecO-DO-2GH">
                             <items>
-                                <tableRow identifier="SwitchRow" id="4fv-Xq-iiQ">
+                                <tableRow identifier="SwitchRow" id="4fv-Xq-iiQ" customClass="SwitchRow">
                                     <group key="rootItem" width="1" alignment="left" id="lEa-2v-YX2">
                                         <items>
                                             <switch width="1" alignment="left" title="Switch 1" id="7hH-tl-lKu">
@@ -20,6 +20,9 @@
                                             </switch>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="switch_item" destination="7hH-tl-lKu" id="RGc-Do-ziL"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>

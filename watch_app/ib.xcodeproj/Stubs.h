@@ -35,3 +35,9 @@
 
 @end
 
+@interface SwitchRow: NSObject
+
+@property IBOutlet WKInterfaceSwitch * switch_item;
+
+@end
+
