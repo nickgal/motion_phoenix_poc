@@ -5,23 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Switches-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="Switches" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <table alignment="left" id="ecO-DO-2GH">
                             <items>
-                                <tableRow id="4fv-Xq-iiQ">
+                                <tableRow identifier="SwitchRow" id="4fv-Xq-iiQ">
                                     <group key="rootItem" width="1" alignment="left" id="lEa-2v-YX2">
                                         <items>
-                                            <switch width="1" alignment="left" value="YES" title="Switch 1" id="7hH-tl-lKu"/>
+                                            <switch width="1" alignment="left" title="Switch 1" id="7hH-tl-lKu">
+                                                <color key="tintColor" red="0.066666666669999999" green="0.75686274509999996" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </switch>
                                         </items>
                                     </group>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="switches_table" destination="ecO-DO-2GH" id="rzR-IU-svD"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
@@ -50,4 +55,5 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.066666666666666666" green="0.75686274509803919" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
 </document>

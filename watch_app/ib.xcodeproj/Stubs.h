@@ -19,6 +19,9 @@
 @end
 
 @interface InterfaceController: WKInterfaceController
+
+@property IBOutlet WKInterfaceTable * switches_table;
+
 -(IBAction) awakeWithContext:(id) context;
 -(IBAction) willActivate;
 -(IBAction) didDeactivate;

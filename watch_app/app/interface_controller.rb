@@ -1,7 +1,7 @@
 class InterfaceController < WKInterfaceController
   extend IB
 
-  # outlet :hello_world, WKInterfaceLabel
+  outlet :switches_table, WKInterfaceTable
   # outlet_collection :labels, UILabel # @property IBOutletCollection(UILabel) NSArray * labels;
 
 
@@ -10,6 +10,7 @@ class InterfaceController < WKInterfaceController
 
     # Initialize variables here.
     # @hello_world.text = "hellow"
+    @switches_table.setNumberOfRows(5, withRowType: "SwitchRow")
     # Configure interface objects here.
     NSLog("%@ awakeWithContext", self)
 
